@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configuration file for ETL --> 
+<config>
+	<settings>
+		<queue>10</queue>
+		<data><![CDATA[data]]></data>
+		<autostart>True</autostart>
+	</settings>
+	
+	<odbc>
+	    <!-- Default Connections -->
+		<local>
+			<db_type>dao</db_type>			
+			<encapsulation>
+				<object>[]</object>
+				<number></number>
+				<string>""</string>
+				<date>##</date>
+			</encapsulation>			
+			<connection>
+				<Provider>Microsoft.Jet.OLEDB.4.0</Provider>
+				<Data_Source name="Data Source"><![CDATA[C:\Databases\Access97\db.mdb]]></Data_Source>
+				<User_ID name="User ID">Admin</User_ID>
+				<Password></Password>
+			</connection>
+		</local>
+
+		<host>
+			<db_type>adodb</db_type>
+			<encapsulation>
+				<object>""</object>
+				<number></number>
+				<string>''</string>
+				<date>''</date>
+			</encapsulation>			
+			<connection>
+				<driver>PostgreSQL ODBC Driver(UNICODE)</driver>
+				<server>10.0.0.14</server>
+				<port>5432</port>
+				<database>etl-test_dev</database>
+				<uid>etl_User</uid>
+				<pwd>test123</pwd>
+			</connection>
+		</host>
+		
+	</odbc>
+	
+</config>

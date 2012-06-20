@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configuration file for ETL --> 
+<etl>
+	<record>
+		<local>
+			<table>Patient Information</table>
+			<map id="PatientID" type="pri_Key" dataEnc="number">Patient ID</map>
+			<map id="BirthDate" dataEnc="date">Birth Date</map>
+			<map id="Gender" dataMap="gender" dataEnc="string">Sex</map>
+			<map id="ts_updated" type="ts_updated" dataEnc="date">ts_updated</map>			
+		</local>
+
+		<host>
+			<table>client_patients_patients</table>
+			<map id="PatientID" type="pri_Key" dataEnc="number">id</map>
+			<map id="BirthDate" dataEnc="date">birthdate</map>
+			<map id="Gender" dataMap="gender" dataEnc="number">gender</map>
+			<map id="ts_updated" type="ts_updated" dataEnc="date">updated_at</map>			
+		</host>	
+				
+	</record>
+	<dataMap>
+		<gender>
+		  <map local="Female" host="0" third="~" />
+		  <map local="Male" host="1" />
+		</gender>
+	</dataMap>
+</etl>
